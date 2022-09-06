@@ -14,7 +14,7 @@ namespace EmployeePayroll
         /// </summary>
         public static string connectionString = @"Data Source=DESKTOP-EPUK1PJ;Initial Catalog=payrolls_service;
                                                     Integrated Security=True;";
-        
+
         /// <summary>
         /// UC2
         /// </summary>
@@ -43,7 +43,7 @@ namespace EmployeePayroll
                             model.BasicPay = Convert.ToDouble(sqlDataReader.GetString(6));
                             model.Deductions = Convert.ToDouble(sqlDataReader.GetString(7));
                             model.TaxablePay = Convert.ToDouble(sqlDataReader.GetString(8));
-                            model.Tax= Convert.ToDouble(sqlDataReader.GetString(9));
+                            model.Tax = Convert.ToDouble(sqlDataReader.GetString(9));
                             model.NetPay = Convert.ToDouble(sqlDataReader.GetString(10)); ;
                             model.StartDate = sqlDataReader.GetDateTime(11);
                             model.City = sqlDataReader.GetString(12);
@@ -51,7 +51,7 @@ namespace EmployeePayroll
                             Console.WriteLine("EmpId:{0}\nEmpName:{1}\nPhoneNumber:{2}\nAddress:{3}\nDepartment:{4}\nGender-:{5}\nBasicPay:{6}" +
                                 "\nDeductions:{7}\nTaxablePay:{8}\nTax:{9}\nNetPay:{10},\nStartDate:{11}\nCity:{12}\nCountry:{13}",
                                  model.EmployeeID, model.EmployeeName, model.PhoneNumber, model.Address, model.Department, model.Gender,
-                                 model.BasicPay, model.Deductions, model.TaxablePay,model.Tax, model.NetPay,
+                                 model.BasicPay, model.Deductions, model.TaxablePay, model.Tax, model.NetPay,
                                  model.StartDate.ToString(), model.City, model.Country);
                             Console.WriteLine("\n");
                         }
@@ -63,9 +63,9 @@ namespace EmployeePayroll
                     sqlDataReader.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                throw new Exception(ex.Message);
+                throw new Exception(exception.Message);
             }
             finally
             {
@@ -113,9 +113,9 @@ namespace EmployeePayroll
                     return false;
                 }
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                throw new Exception(ex.Message);
+                throw new Exception(exception.Message);
             }
         }
     }
